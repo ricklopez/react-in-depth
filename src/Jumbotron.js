@@ -12,7 +12,7 @@ class Jumbotron extends Component {
           <p>It uses utility classes for typography and spacing to space content out within the larger
               container.</p>
           <h1 className="text-success">{this.props.items.length}</h1>
-          <SubscribeForm subscribed= {this.props.subscribed}/>
+          <SubscribeForm subscribed= {this.props.subscribed} onFormSubmit={this.props.onFormSubmit}/>
       </div>
     );
   }
