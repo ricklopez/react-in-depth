@@ -4,6 +4,13 @@ import './App.css';
 import Jumbotron from './Jumbotron';
 
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+    subscribed: false,
+    items: []
+    }
+  }
   render() {
     return (
       <div className="App">
