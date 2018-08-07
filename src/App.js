@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Jumbotron from './Jumbotron';
+import env from './env';
 
 class App extends Component {
   constructor(props){
@@ -10,6 +11,26 @@ class App extends Component {
     subscribed: false,
     items: []
     }
+  }
+  
+  //LifeCycle Methods
+  componentDidMount(){
+    this.loadItemsFromApi();
+  }
+  
+  // Methods
+  loadItemsFromApi(){
+    fetch(env.MOCKAPI + '/posts')
+    .then(results => {
+      console.log(results);
+      return results.json();
+    })
+    .then(data => {
+      this.setState({
+        items: data.map((i) => i )
+      });
+      console.log(data);
+    });
   }
   
   onFormSubmit(e){
