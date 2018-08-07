@@ -12,7 +12,7 @@ class SubscribeForm extends Component {
             </div>
             <button type="submit" className="btn btn-primary mb-2">Subscribe</button>
           </form>
-          <p>Thanks For Subscribing</p>
+          <p>{this.props.subscribed ? 'Thanks For Subscribing' : ''}</p>
         </div>
       </div>
     );

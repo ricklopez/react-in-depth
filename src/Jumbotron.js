@@ -11,7 +11,8 @@ class Jumbotron extends Component {
           <hr className="my-4"></hr>
           <p>It uses utility classes for typography and spacing to space content out within the larger
               container.</p>
-          <SubscribeForm/>
+          <h1 className="text-success">{this.props.items.length}</h1>
+          <SubscribeForm subscribed= {this.props.subscribed}/>
       </div>
     );
   }
