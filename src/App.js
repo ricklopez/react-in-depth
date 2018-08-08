@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Jumbotron from './Jumbotron';
+import ItemRow from './ItemRow';
 import env from './env';
 
 class App extends Component {
@@ -51,6 +52,9 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <Jumbotron subscribed={this.state.subscribed} items={this.state.items} onFormSubmit={(e) => this.onFormSubmit(e)}/>
+          <div className="container">
+            <ItemRow items={this.state.items}/>
+          </div>     
       </div>
     );
   }
