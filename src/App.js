@@ -8,10 +8,15 @@ import env from './env';
 class App extends Component {
   constructor(props){
     super(props);
+    this.emailInput = null;
     this.state = {
     subscribed: false,
     items: []
     }
+    
+    this.setTextInputRef = element => {
+      this.emailInput = element;
+    };
   }
   
   //LifeCycle Methods
@@ -37,9 +42,10 @@ class App extends Component {
   onFormSubmit(e){
     e.preventDefault();
     console.log(e);
+    console.log(this.emailInput.value);
     this.setState({
     subscribed: true
-    }, () => {console.log(this.state.subscribed)});
+    }, () => {this.emailInput.value = ''});
     e.target.value = '';
     console.log(this.state.subscribed);
   }
@@ -51,10 +57,14 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <Jumbotron subscribed={this.state.subscribed} items={this.state.items} onFormSubmit={(e) => this.onFormSubmit(e)}/>
-          <div className="container">
-            <ItemRow items={this.state.items}/>
-          </div>     
+        <Jumbotron 
+          subscribed={this.state.subscribed} 
+          items={this.state.items} onFormSubmit={(e) => this.onFormSubmit(e)} 
+          setTextInputRef={this.setTextInputRef}/>
+          
+        <div className="container">
+          <ItemRow items={this.state.items}/>
+        </div>     
       </div>
     );
   }

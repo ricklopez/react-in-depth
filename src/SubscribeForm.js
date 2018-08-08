@@ -8,7 +8,7 @@ class SubscribeForm extends Component {
           <form className="form-inline justify-content-center" onSubmit={(e) => this.props.onFormSubmit(e)}>
             <div className="form-group mx-sm-3 mb-2">
               <label className="sr-only">Email</label>
-              <input type="text" className="form-control" id="inputEmail" placeholder="Email"/>
+              <input type="text" className="form-control" id="inputEmail" ref={this.props.setTextInputRef} placeholder="Email" />
             </div>
             <button type="submit" className="btn btn-primary mb-2">Subscribe</button>
           </form>
