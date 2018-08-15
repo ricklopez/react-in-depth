@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Jumbotron from './Jumbotron';
-import ItemRow from './ItemRow';
-import env from './env';
+import logo from './../assets/logo.svg';
+import './../styles/App.css';
+import Jumbotron from './../components/Jumbotron';
+import ItemRow from './../components/ItemRow';
+import env from './../env';
 
-class App extends Component {
+class Home extends Component {
   constructor(props){
     super(props);
     this.emailInput = null;
@@ -70,4 +70,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;
